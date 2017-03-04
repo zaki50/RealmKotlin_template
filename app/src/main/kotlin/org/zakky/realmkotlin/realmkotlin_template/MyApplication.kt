@@ -5,6 +5,12 @@ import io.realm.Realm
 
 class MyApplication : Application() {
 
+    companion object {
+        val component: MainComponent = DaggerMainComponent.builder()
+                .realmConfigComponent(DaggerRealmConfigComponent.create())
+                .build()
+    }
+
     override fun onCreate() {
         super.onCreate()
 
@@ -12,6 +18,6 @@ class MyApplication : Application() {
     }
 
     public fun inject(act: MainActivity) {
-        DaggerMainComponent.create().inject(act)
+        component.inject(act)
     }
 }

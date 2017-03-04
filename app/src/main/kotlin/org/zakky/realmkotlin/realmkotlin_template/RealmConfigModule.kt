@@ -4,12 +4,13 @@ import dagger.Module
 import dagger.Provides
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import javax.inject.Singleton
 
 
 @Module
-class MainModule {
+class RealmConfigModule {
     @Provides
-    fun provideRealm(conf: RealmConfiguration): Realm {
-        return Realm.getInstance(conf)
+    fun provideRealmConfiguration(): RealmConfiguration {
+        return RealmConfiguration.Builder().build()
     }
 }
