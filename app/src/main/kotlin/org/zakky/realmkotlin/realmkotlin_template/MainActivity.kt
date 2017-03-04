@@ -1,8 +1,8 @@
 package org.zakky.realmkotlin.realmkotlin_template
 
-import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
+import android.databinding.DataBindingUtil.setContentView
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import io.realm.Realm
 import org.zakky.realmkotlin.realmkotlin_template.databinding.ActivityMainBinding
@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val contentView: Any = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
         (application as MyApplication).inject(this)
+
+        setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         realm.executeTransaction {
             realm.createObject(Person::class.java)

@@ -15,7 +15,7 @@ class MyApplication : Application() {
         Realm.init(this)
     }
 
-    public fun inject(act: MainActivity) {
+    fun inject(act: MainActivity) {
         component.inject(act)
     }
 }
