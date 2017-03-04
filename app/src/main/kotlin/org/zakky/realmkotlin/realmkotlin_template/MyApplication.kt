@@ -2,6 +2,7 @@ package org.zakky.realmkotlin.realmkotlin_template
 
 import android.app.Application
 import io.realm.Realm
+import org.zakky.realmkotlin.realmkotlin_template.component.MainComponent
 
 class MyApplication : Application() {
 

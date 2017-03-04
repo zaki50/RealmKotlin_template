@@ -1,4 +1,4 @@
-package org.zakky.realmkotlin.realmkotlin_template
+package org.zakky.realmkotlin.realmkotlin_template.component
 
 import dagger.Module
 import dagger.Provides
