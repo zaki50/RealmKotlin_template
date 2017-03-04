@@ -5,11 +5,9 @@ import io.realm.Realm
 
 class MyApplication : Application() {
 
-    companion object {
-        val component: MainComponent = DaggerMainComponent.builder()
-                .realmConfigComponent(DaggerRealmConfigComponent.create())
-                .build()
-    }
+    val component: MainComponent = DaggerMainComponent.builder()
+            .realmConfigComponent(DaggerRealmConfigComponent.create())
+            .build()
 
     override fun onCreate() {
         super.onCreate()
